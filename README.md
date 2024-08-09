@@ -29,7 +29,7 @@ This addon has been featured by %YOUR_FAVORITE_HA_YOUTUBER% and is often listed 
 [<img src="http://img.youtube.com/vi/WcErD5PvIYw/0.jpg" width="300"/>](http://www.youtube.com/watch?v=WcErD5PvIYw "DrZzs")
 
 >This project requires financial support to make the Google Drive integration work, but it is free for you to use.  You can join those helping to keep the lights on at:
->  
+>
 >[<img src="images/bmc-button.svg" width=150 height=40 style="margin: 5px"/>](https://www.buymeacoffee.com/sabeechen)
 >[<img src="images/paypal-button.svg" width=150 height=40 style="margin: 5px"/>](https://www.paypal.com/paypalme/stephenbeechen)
 >[<img src="images/patreon-button.svg" width=150 height=40 style="margin: 5px"/>](https://www.patreon.com/bePatron?u=4064183)
@@ -48,9 +48,9 @@ This addon has been featured by %YOUR_FAVORITE_HA_YOUTUBER% and is often listed 
    <img src="images/add_ss.png" width="300"/>
 
 3. Reload the page , scroll to the bottom to find the new repository, and click the new add-on named "Home Assistant Google Drive Backup":
-   
+
    <img src="images/repo_ss.png" width="429"/>
-   
+
    Note: Home Assistant loads the repository in the background and the new item won't always show up automatically.  You might need to wait a few seconds and then "hard refresh" the page for it to show up.  On most browsers the keyboard shortcut for this is CTRL+F5. If it still doesn't show up, clear your browser's cache and it should then.
 4. Click <kbd>Install</kbd> and give it a few minutes to finish downloading.
 
@@ -100,7 +100,7 @@ The backups this addon creates are the same backups that Home Assistant makes by
   - Download one of the backups you've previously created from [Google Drive](https://drive.google.com).
   - On whatever hardware you're using to run Home Assistant now, follow the [normal instructions](https://www.home-assistant.io/getting-started/) to install Home Assistant.
   - Once it's running (but before you create a user), click the link on the Home Assistant setup page that says "Alternatively you can restore from a previous backup" and upload the backup you downloaded from Google Drive.
-- If you've got a backup that you'd like to restore to an already set up Home Assistant instance that doesn't already have this addon installed, you'll need to use something like the [Samba Addon](https://www.home-assistant.io/hassio/haos_common_tasks/#installing-and-using-the-samba-add-on) to copy a backup downloaded from Google Drive into the /backup folder.  
+- If you've got a backup that you'd like to restore to an already set up Home Assistant instance that doesn't already have this addon installed, you'll need to use something like the [Samba Addon](https://www.home-assistant.io/hassio/haos_common_tasks/#installing-and-using-the-samba-add-on) to copy a backup downloaded from Google Drive into the /backup folder.
 
 ### I never look at HA notifications. Can I show information about backups in my Home Assistant Interface?
 
@@ -207,7 +207,7 @@ The config option `backup_name` can be changed to give backups a different name 
 - `{version_ha}`, Home Assistant version string (eg 0.91.3)
 - `{version_hassos}`: HassOS version string (eg 0.2.15)
 - `{version_super}`: , Supervisor version string (eg 1.2.19)
-- `{date}`: Locale aware date (eg 2023/01/01).
+- `{date}`: Locale aware date (eg 2024/01/01).
 - `{time}`: Locale aware time (eg 02:03:04 am)
 - `{datetime}`: Locale-aware datetime string
 - `{isotime}`: Date and time in ISO format
