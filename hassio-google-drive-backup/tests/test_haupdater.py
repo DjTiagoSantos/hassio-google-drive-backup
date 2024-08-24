@@ -8,7 +8,6 @@ from backup.ha.haupdater import REASSURING_MESSAGE
 from .faketime import FakeTime
 from .helpers import HelperTestSource
 from dev.simulationserver import SimulationServer
-from backup.const import NECESSARY_OLD_BACKUP_PLURAL_NAME
 from backup.logger import getLast
 from backup.util import Estimator
 from dev.simulated_supervisor import SimulatedSupervisor, URL_MATCH_CORE_API
@@ -335,7 +334,7 @@ async def test_update_backups_old_names(updater: HaUpdater, server, backup: Back
     assert updater._state() == "backed_up"
     verifyEntity(supervisor, "binary_sensor.snapshots_stale",
                  "off", {
-                     "unique_id": f"hassio_google_drive_backup.{NECESSARY_OLD_BACKUP_PLURAL_NAME}_stale",
+                     "unique_id": "hassio_google_drive_backup.snapshots_stale",
                      "friendly_name": "Snapshots Stale",
                      "device_class": "problem"})
     date = '1985-12-06T05:00:00+00:00'
