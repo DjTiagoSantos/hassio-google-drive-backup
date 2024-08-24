@@ -41,6 +41,7 @@ async def test_init(updater: HaUpdater, global_info, supervisor: SimulatedSuperv
     verifyEntity(supervisor, "binary_sensor.backups_stale",
                  "off", STALE_ATTRIBUTES)
     verifyEntity(supervisor, "sensor.backup_state", "waiting", {
+        'unique_id': 'hassio_google_drive_backup.backup_state',
         'friendly_name': 'Backup State',
         'last_backup': 'Never',
         'next_backup': time.now().isoformat(),
@@ -124,6 +125,7 @@ async def test_update_backups(updater: HaUpdater, server, time: FakeTime, superv
     verifyEntity(supervisor, "binary_sensor.backups_stale",
                  "off", STALE_ATTRIBUTES)
     verifyEntity(supervisor, "sensor.backup_state", "waiting", {
+        'unique_id': 'hassio_google_drive_backup.backup_state',
         'friendly_name': 'Backup State',
         'last_backup': 'Never',
         'next_backup': time.now().isoformat(),
@@ -146,6 +148,7 @@ async def test_update_backups_no_next_backup(updater: HaUpdater, server, time: F
     verifyEntity(supervisor, "binary_sensor.backups_stale",
                  "off", STALE_ATTRIBUTES)
     verifyEntity(supervisor, "sensor.backup_state", "waiting", {
+        'unique_id': 'hassio_google_drive_backup.backup_state',
         'friendly_name': 'Backup State',
         'last_backup': 'Never',
         'next_backup': None,
@@ -168,6 +171,7 @@ async def test_update_backups_sync(updater: HaUpdater, server, time: FakeTime, b
                  "off", STALE_ATTRIBUTES)
     date = '1985-12-06T05:00:00+00:00'
     verifyEntity(supervisor, "sensor.backup_state", "backed_up", {
+        'unique_id': 'hassio_google_drive_backup.backup_state',
         'friendly_name': 'Backup State',
         'last_backup': date,
         'last_uploaded': date,
@@ -196,6 +200,7 @@ async def test_notification_link(updater: HaUpdater, server, time: FakeTime, glo
     verifyEntity(supervisor, "binary_sensor.backups_stale",
                  "off", STALE_ATTRIBUTES)
     verifyEntity(supervisor, "sensor.backup_state", "waiting", {
+        'unique_id': 'hassio_google_drive_backup.backup_state',
         'friendly_name': 'Backup State',
         'last_backup': 'Never',
         'next_backup': time.now().isoformat(),
@@ -335,6 +340,7 @@ async def test_update_backups_old_names(updater: HaUpdater, server, backup: Back
                      "device_class": "problem"})
     date = '1985-12-06T05:00:00+00:00'
     verifyEntity(supervisor, "sensor.snapshot_backup", "backed_up", {
+        'unique_id': 'hassio_google_drive_backup.snapshot_state',
         'friendly_name': 'Snapshot State',
         'last_snapshot': date,
         'snapshots': [{
