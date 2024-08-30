@@ -121,6 +121,26 @@ card:
   title: Stale Backups!`
 ```
 
+You could also show a textual card displaying a summary of information about your backups and uploads, by using the [state attributes](https://www.home-assistant.io/docs/configuration/state_object/#attributes) of `sensor.backup_state`. Create a markdown card and fill it with a template:
+
+```yaml
+{% set last_backup = state_attr('sensor.backup_state', 'last_backup') %}
+{% set last_uploaded = state_attr('sensor.backup_state', 'last_uploaded') %}
+{% set size_in_home_assistant = state_attr('sensor.backup_state', 'size_in_home_assistant') %}
+{% set size_in_google_drive = state_attr('sensor.backup_state', 'size_in_google_drive') %}
+{% set backups_in_home_assistant = state_attr('sensor.backup_state', 'backups_in_home_assistant') %}
+{% set backups_in_google_drive = state_attr('sensor.backup_state', 'backups_in_google_drive') %}
+
+Last backup: {% if last_backup == "Never" %}never{% else %}{{ as_timestamp(last_backup, 0) | timestamp_custom('%Y-%m-%d') }} ({{ size_in_home_assistant }}, {{ backups_in_home_assistant }} total){% endif %}
+Last upload: {% if last_uploaded == "Never" %}never{% else %}{{ as_timestamp(last_uploaded, 0) | timestamp_custom('%Y-%m-%d') }} ({{ size_in_google_drive }}, {{ backups_in_google_drive }} total){% endif %}
+```
+
+This will render as:
+
+> Last backup: 2024-08-24 (22.1 GB, 1 total)
+>
+> Last upload: never
+
 #### Mobile Notifications
 
 If you have [android](https://github.com/Crewski/HANotify) or [iOS](https://www.home-assistant.io/docs/ecosystem/ios/), [other notifications](https://www.home-assistant.io/components/notify/) set up, this automation would let you know if things go stale:
