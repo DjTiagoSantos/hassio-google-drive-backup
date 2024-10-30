@@ -270,7 +270,7 @@ The add-on uses the supervisor to create backups, and the supervisor only permit
 
 ### <a href="supervisor_logs"></a>I'm getting weird errors.  Where do I look for more details about an error (Supervisor logs).
 
-The addon uses Home Assistant's "supervisor" to create and delete backups on Home Asisstant's side.  In case you don't know, the supervisor is something that runs in the background on Home Assistant and manages stuff like backups, connections to hardware, and setting up the environment that Home Assistant Core (eg the UI) and addons run in.  Because of this a lot of errors you run into (problems with the NAS, HD corruption, etc) only show up in the supervisor's logs.  The supervisor's logs are kind of hidden by default, to view them:
+The addon uses Home Assistant's "supervisor" to create and delete backups on Home Assistant's side.  In case you don't know, the supervisor is something that runs in the background on Home Assistant and manages stuff like backups, connections to hardware, and setting up the environment that Home Assistant Core (eg the UI) and addons run in.  Because of this a lot of errors you run into (problems with the NAS, HD corruption, etc) only show up in the supervisor's logs.  The supervisor's logs are kind of hidden by default, to view them:
 
 - Go to your Home Assistant user profile by clicking the user icon in the bottom left of Home Assistant's main UI.
 - Enable "Advanced Mode" in your profile.
